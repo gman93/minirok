@@ -87,6 +87,11 @@ class Player(dbus.service.Object):
             else:
                 title = tags['Title']
                 artist = tags['Artist']
+                fil=open("play_history.data","a")
+                fil.write(title)
+                fil.close()
+                print "\n\n\nplaying->",artist
+                print "\n\n\n"
                 if artist is not None:
                     formatted = u'%s - %s' % (artist, title)
                 else:

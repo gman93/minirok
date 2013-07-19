@@ -92,6 +92,19 @@ class GStreamerEngine(QtCore.QObject):
         self.bin.set_state(gst.STATE_NULL)
         self.bin.set_state(gst.STATE_PLAYING)
         self.status = State.PLAYING
+        #this is to print the curretly playing song
+        x=path.split("/")
+        
+        for a in x:
+            b=a
+        print " Now playing",b 
+
+        fil=open("song.data","a")
+        fil.write(b)
+        fil.close()
+
+        
+
 
     def pause(self, paused=True):
         if paused:
